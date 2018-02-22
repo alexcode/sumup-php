@@ -29,7 +29,12 @@ class CheckoutTest extends TestCase
         ]);
 
         $this->setMockClient([
-            new Response(200, ['Content-Type' => 'application/json'], $body),
+            new Response(200, [
+                'Content-Type' => 'application/json',
+                'Date' => [
+                    (new \DateTime)->format(\DateTime::ATOM)
+                ]
+            ], $body),
         ]);
 
         $params = [

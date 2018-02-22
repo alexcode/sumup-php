@@ -1,9 +1,11 @@
 # SumUp PHP SDK
+[![Build Status](https://travis-ci.org/alexcode/sumup-php.svg?branch=master)](https://travis-ci.org/alexcode/sumup-php)
+
 > This is a work in progress package
 
 ## Requirements
 
-PHP 5.6.0 and later.
+PHP 7 and later.
 
 ## Composer
 

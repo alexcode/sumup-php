@@ -12,6 +12,7 @@ class SumupObject implements \ArrayAccess, \Countable, \JsonSerializable
     {
         $this->setAttributes($attributes);
         $this->validateRequired();
+        $this->dirty = false;
     }
 
     public function setAttributes($attributes)

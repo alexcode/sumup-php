@@ -97,9 +97,56 @@ Note that a checkout can be completed in a browser only from a domain that is pr
 
 ## List of currently implemented SumUp API
 
--   [x] Checkouts API
--   [ ] Accounts API
--   [ ] Transactions API
+#### Checkouts API
+-   [x] Create checkout
+-   [x] Complete checkout
+-   [ ] Create customer
+-   [ ] Get payment instruments
+-   [ ] Create payment instrument
+-   [ ] Disable payment instrument
+
+#### Transactions API
+-   [ ] Transaction history
+-   [ ] Transaction details
+-   [x] Refund transaction
+-   [ ] Receipt data
+
+#### Accounts API
+-   [ ] Get account
+-   [ ] Get personal profile
+-   [ ] Create personal profile
+-   [ ] Get merchant profile
+-   [ ] Create merchant profile
+-   [ ] Get DBA
+-   [ ] Edit DBA
+-   [ ] Get Bank Accounts
+-   [ ] Create Bank Accounts
+-   [ ] Payouts Get settings
+-   [ ] Payouts Edit settings
+###### Accounts API Employee
+-   [ ] Create Employee
+-   [ ] Get Employees
+-   [ ] Change employee credentials
+###### Accounts API Shelf
+-   [ ] Get shelves
+-   [ ] Create shelf
+-   [ ] Create shelf
+-   [ ] Edit shelf
+-   [ ] Delete shelf
+###### Accounts API Product
+-   [ ] Get products
+-   [ ] Create product
+-   [ ] Get product
+-   [ ] Edit product
+-   [ ] Delete product
+-   [ ] Get product prices
+-   [ ] Create product price
+-   [ ] Get product price
+-   [ ] Edit product price
+-   [ ] Delete product price
+###### Accounts API Application Settings
+-   [ ] Application Get settings
+-   [ ] Application Edit settings
 
 ## Credits
 This Library is loosely inspired from [Stripe PHP](https://github.com/stripe/stripe-php)

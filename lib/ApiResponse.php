@@ -22,11 +22,12 @@ class ApiResponse
     public function __construct(Response $response)
     {
         $date = $response->getHeader('date');
-        if (is_array($date)) {
+        if (is_array($date) && count($date) > 0) {
+
             $this->createdAt = $date[0];
         }
         $this->raw = $response;
-        $this->data = json_decode($response->getBody());
+        $this->data = $this->decodeJson($response->getBody());
     }
 
     public function get($name)
@@ -39,5 +40,11 @@ class ApiResponse
     public function toArray()
     {
         return (array) $this->data;
+    }
+
+    private function decodeJson($args) {
+        $data = json_decode($args);
+
+        return json_last_error() !== JSON_ERROR_NONE ? $args : $data;
     }
 }

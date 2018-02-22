@@ -2,8 +2,6 @@
 
 namespace Sumup;
 
-use Sumup\SumupObject;
-
 class Checkout extends SumupObject
 {
     const API_ENDPOINT = 'checkouts';
@@ -78,6 +76,17 @@ class Checkout extends SumupObject
         "amount",
         "pay_to_email"
     ];
+
+    public function __construct(array $attributes = null)
+    {
+        parent::__construct($attributes);
+        if (is_array($this->transactions)) {
+            $createTransaction = function(array $params = null) {
+                return new Transaction($params);
+            };
+            $this->transactions = array_map($createTransaction, $this->transactions);
+        }
+    }
 
     public static function create($params, AccessToken $token)
     {

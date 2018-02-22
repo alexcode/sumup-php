@@ -2,7 +2,7 @@
 
 namespace Sumup;
 
-class Transaction
+class Transaction extends SumupObject
 {
     /**
      * Transaction id
@@ -74,4 +74,31 @@ class Transaction
      * @var float|null
      */
     public $internal_id;
+
+    public function refund(AccessToken $token, $amount = null)
+    {
+        if (!is_null($amount) && !is_numeric($amount)) {
+            $msg = sprintf(
+                'The property amount %s is not a numeric value', $amount);
+            throw new Error\TransactionError($msg, 1);
+        }
+
+        if (floatval($amount) > floatval($this->amount)) {
+            $msg = sprintf(
+                'The refunded amount %s cannot be higher than the transaction '
+                .'amount %s',
+                (string) $amount,
+                (string) $this->amount
+            );
+            throw new Error\TransactionError($msg, 2);
+        }
+
+        return (new ApiRequestor())->setAccessToken($token)->request(
+            'post',
+            'me/refund/' . $this->id,
+            [
+                'amount' => $amount ?: $this->amount,
+            ]
+        );
+    }
 }

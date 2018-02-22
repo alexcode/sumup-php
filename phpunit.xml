@@ -1,4 +1,4 @@
-<phpunit bootstrap="tests/bootstrap.php" colors="true">
+<phpunit bootstrap="./tests/bootstrap.php" colors="true">
     <testsuites>
         <testsuite name="SumUp PHP Test Suite">
             <directory suffix="Test.php">tests</directory>

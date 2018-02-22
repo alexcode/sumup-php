@@ -35,7 +35,7 @@ class AccessToken
         $this->token_type = $response->get('token_type');
         $this->expires_at = $this->getTokenExpire(
             $response->get('expires_in'),
-            $response->raw->getHeader('date')[0]
+            $response->createdAt
         );
         $this->refresh_token = $response->get('refresh_token');
         $this->scope = $response->get('scope');

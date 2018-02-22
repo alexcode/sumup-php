@@ -11,6 +11,7 @@ use \GuzzleHttp\Psr7\Response;
  */
 class ApiResponse
 {
+    public $createdAt;
     public $data;
     public $raw;
 
@@ -20,6 +21,10 @@ class ApiResponse
      */
     public function __construct(Response $response)
     {
+        $date = $response->getHeader('date');
+        if (is_array($date)) {
+            $this->createdAt = $date[0];
+        }
         $this->raw = $response;
         $this->data = json_decode($response->getBody());
     }

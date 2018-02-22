@@ -3,7 +3,6 @@
 namespace Sumup;
 
 use GuzzleHttp\Psr7\Response;
-// use GuzzleHttp\Stream\Stream;
 
 /**
  * Base class for SumUp test cases.
@@ -42,7 +41,12 @@ class OAuthTest extends TestCase
             'scope' => $this->scopes,
         ]);
         $this->setMockClient([
-            new Response(200, ['Content-Type' => 'application/json'], $body),
+            new Response(200, [
+                'Content-Type' => 'application/json',
+                'Date' => [
+                    (new \DateTime)->format(\DateTime::ATOM)
+                ]
+            ], $body),
         ]);
 
         $token = OAuth::getToken([
@@ -91,7 +95,12 @@ class OAuthTest extends TestCase
         ]);
 
         $this->setMockClient([
-            new Response(200, ['Content-Type' => 'application/json'], $body),
+            new Response(200, [
+                'Content-Type' => 'application/json',
+                'Date' => [
+                    (new \DateTime)->format(\DateTime::ATOM)
+                ]
+            ], $body),
         ]);
 
         $token = OAuth::refreshToken($expiredToken);

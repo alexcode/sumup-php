@@ -19,7 +19,8 @@
         "email": "infocontact.alex@gmail.com"
       }
     ],
-    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "minimum-stability": "dev",
     "autoload": {
       "psr-4": {
         "Sumup\\" : "lib/"

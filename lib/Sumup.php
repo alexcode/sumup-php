@@ -38,7 +38,7 @@ class Sumup
      * The redirect Uri for the OAuth authorize.
      * @var string
      */
-    public static $redirectUri = 'http://ilink.fr';
+    public static $redirectUri;
 
     /**
      * @return string The apiBase used for requests.
@@ -134,5 +134,16 @@ class Sumup
     public static function setApiVersion($apiVersion)
     {
         self::$apiVersion = $apiVersion;
+    }
+
+    /**
+     * SumUp __construct
+     * @param string $clientId     Your SumUp Client Id
+     * @param string $clientSecret Your SumUp Client Secret
+     */
+    public function __construct($clientId, $clientSecret)
+    {
+        $this->setClientId($clientId);
+        $this->setClientSecret($clientSecret);
     }
 }

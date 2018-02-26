@@ -95,13 +95,12 @@ abstract class OAuth
 
         if ($oauthParam === null) {
             $funcName = 'get' . Util\Util::toCamelCase($paramName, true);
-            $oauthParam = Sumup::{$funcName}();
+            $oauthParam = \Sumup::{$funcName}();
         }
 
         if ($oauthParam === null) {
-            $msg = 'No '.$paramName.' provided.  (HINT: set your '.$paramName.' using '
-            . '"Sumup::setClientSecret(<CLIENT-SECRET>)".  You can find your '.$paramName
-            . 'in your Sumup dashboard at '
+            $msg = 'No '.$paramName.' provided. You can find your '. $paramName
+            . ' in your Sumup dashboard at '
             . 'https://me.sumup.com/developers, '
             . 'after registering your account as a platform. See '
             . 'https://sumupus.desk.com/ for details, '

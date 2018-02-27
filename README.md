@@ -1,5 +1,9 @@
 # SumUp PHP SDK
 [![Build Status](https://travis-ci.org/alexcode/sumup-php.svg?branch=master)](https://travis-ci.org/alexcode/sumup-php)
+[![Latest Stable Version](https://poser.pugx.org/alexcode/sumup-php/v/stable)](https://packagist.org/packages/alexcode/sumup-php)
+[![Total Downloads](https://poser.pugx.org/alexcode/sumup-php/downloads)](https://packagist.org/packages/alexcode/sumup-php)
+[![Latest Unstable Version](https://poser.pugx.org/alexcode/sumup-php/v/unstable)](https://packagist.org/packages/alexcode/sumup-php)
+[![License](https://poser.pugx.org/alexcode/sumup-php/license)](https://packagist.org/packages/alexcode/sumup-php)
 
 > This is a work in progress package
 

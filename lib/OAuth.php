@@ -95,7 +95,7 @@ abstract class OAuth
 
         if ($oauthParam === null) {
             $funcName = 'get' . Util\Util::toCamelCase($paramName, true);
-            $oauthParam = \Sumup::{$funcName}();
+            $oauthParam = Sumup::{$funcName}();
         }
 
         if ($oauthParam === null) {

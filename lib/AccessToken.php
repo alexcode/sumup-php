@@ -10,7 +10,7 @@ namespace Sumup;
 class AccessToken
 {
     public $access_token;
-    public $token_type;
+    public $token_type = 'Bearer';
     public $expires_at;
     public $refresh_token;
     public $scope;
@@ -32,7 +32,7 @@ class AccessToken
     protected function setApiResonse(ApiResponse $response)
     {
         $this->access_token = $response->get('access_token');
-        $this->token_type = $response->get('token_type');
+        $this->token_type = $response->get('token_type', 'Bearer');
         $this->expires_at = $this->getTokenExpire(
             $response->get('expires_in'),
             $response->createdAt

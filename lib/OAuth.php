@@ -61,7 +61,7 @@ abstract class OAuth
      *
      * @return SumupObject Object containing the response from the API.
      */
-    public static function refreshToken(AccessToken $token)
+    public static function refreshToken(AccessToken $token, $params = null)
     {
         if ($token->expires_at > new \DateTime()) {
             return $token;
@@ -70,8 +70,8 @@ abstract class OAuth
         $requestor = new ApiRequestor(Sumup::$connectBase, true);
         $params = [
             'grant_type' => 'refresh_token',
-            'client_id' => self::_getConnectParam('client_id'),
-            'client_secret' => self::_getConnectParam('client_secret'),
+            'client_id' => self::_getConnectParam('client_id', $params),
+            'client_secret' => self::_getConnectParam('client_secret', $params),
             'refresh_token' => $token->refresh_token
         ];
         $response = $requestor->request('post', '/token', $params);

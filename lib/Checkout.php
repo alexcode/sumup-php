@@ -95,6 +95,13 @@ class Checkout extends SumupObject
             self::API_ENDPOINT,
             new Checkout($params)
         );
+        
+        $code = $response->raw->getStatusCode();
+        if ($code !== 200) {
+            throw new Error\ApiRequestorError(
+                json_encode($response->data), $code
+            );
+        }
 
         return new Checkout($response->toArray());
     }

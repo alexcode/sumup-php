@@ -54,6 +54,7 @@ class ApiRequestor
             $response = $client->request($method, $url, [
                 $payloadType => $params,
                 'headers' => $headers,
+                'http_errors' => false
             ]);
         } catch (\GuzzleHttp\Exception\ClientException $e) {
             throw new Error\ApiRequestorError($e->getMessage());

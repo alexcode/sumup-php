@@ -5,7 +5,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/alexcode/sumup-php/v/unstable)](https://packagist.org/packages/alexcode/sumup-php)
 [![License](https://poser.pugx.org/alexcode/sumup-php/license)](https://packagist.org/packages/alexcode/sumup-php)
 
-> This is a work in progress package
+__This repo is archived, please use the [official Sumup PHP SDK](https://github.com/sumup/sumup-ecom-php-sdk).__
 
 ## Requirements
 
